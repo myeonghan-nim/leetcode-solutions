@@ -1,0 +1,39 @@
+[project]
+name = "leetcode-solutions"
+version = "0.1.0"
+description = "My LeetCode solutions in Python"
+authors = [
+    { name = "myeonghna-nim", email = "hannim0828@gmail.com" }
+]
+dependencies = [
+    "uv",
+    "ruff",
+]
+requires-python = ">=3.9"
+readme = "README.md"
+license = { text = "MIT" }
+keywords = ["leetcode", "python", "algorithms"]
+
+[project.urls]
+Homepage = "https://github.com/myeonghna-nim/leetcode-solutions"
+Repository = "https://github.com/myeonghna-nim/leetcode-solutions"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 180
+target-version = "py39" # Adjust this to your Python version
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "Q"]
+ignore = ["E203", "E501"] # E203: whitespace before ':', E501: line too long
+
+[tool.ruff.lint.isort]
+known-first-party = ["leetcode_solutions"] # Replace with your actual package name if different
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+line-ending = "auto"
