@@ -10,9 +10,7 @@ class Solution:
             "M": 1000
         }
 
-        total = 0
-        prev_value = 0
-
+        prev_value = total = 0
         for char in reversed(s):
             current_value = roman_numerals[char]
             if current_value < prev_value:
