@@ -3,7 +3,7 @@ name = "leetcode-solutions"
 version = "0.1.0"
 description = "My LeetCode solutions in Python"
 authors = [
-    { name = "myeonghna-nim", email = "hannim0828@gmail.com" }
+    { email = "hannim0828@gmail.com" }
 ]
 dependencies = [
     "uv",
