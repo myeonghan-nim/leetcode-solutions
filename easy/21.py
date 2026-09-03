@@ -12,9 +12,6 @@ class Solution:
                 list2 = list2.next
             current = current.next
 
-        if list1:
-            current.next = list1
-        elif list2:
-            current.next = list2
+        current.next = list1 or list2
 
         return dummy.next

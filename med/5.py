@@ -1,8 +1,5 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        if not s:
-            return ""
-
         t = "^#" + "#".join(s) + "#$"
         radius = [0] * len(t)
 

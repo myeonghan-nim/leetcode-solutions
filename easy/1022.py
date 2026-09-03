@@ -1,6 +1,6 @@
 class Solution:
     def sumRootToLeaf(self, root: Optional[TreeNode]) -> int:
-        def sumNodes(node: Optional[TreeNode], number: int) -> int:
+        def sum_paths(node: Optional[TreeNode], number: int) -> int:
             if not node:
                 return 0
 
@@ -8,5 +8,5 @@ class Solution:
             if not (node.left or node.right):
                 return number
 
-            return sumNodes(node.left, number) + sumNodes(node.right, number)
-        return sumNodes(root, 0)
+            return sum_paths(node.left, number) + sum_paths(node.right, number)
+        return sum_paths(root, 0)

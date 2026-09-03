@@ -4,6 +4,6 @@ class Solution:
         for idx, b in enumerate(bin(n)[2:]):
             if b == '1':
                 if prev != -1:
-                    distance = max(distance, (idx - prev))
+                    distance = max(distance, idx - prev)
                 prev = idx
         return distance

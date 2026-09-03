@@ -2,10 +2,7 @@ class Solution:
     def canPartitionGrid(self, grid: List[List[int]]) -> bool:
         m, n = len(grid), len(grid[0])
 
-        total = 0
-        for row in grid:
-            total += sum(row)
-
+        total = sum(map(sum, grid))
         if total % 2:
             return False
         target = total // 2

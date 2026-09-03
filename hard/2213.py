@@ -6,37 +6,37 @@ class Solution:
         suf = [0] * (4 * n)
         best = [0] * (4 * n)
 
-        def pull(node: int, l: int, m: int, r: int) -> None:
+        def pull(node: int, lo: int, mid: int, hi: int) -> None:
             lc, rc = 2 * node, 2 * node + 1
-            left_len, right_len = m - l + 1, r - m
+            left_len, right_len = mid - lo + 1, hi - mid
             pref[node] = pref[lc]
             suf[node] = suf[rc]
             best[node] = max(best[lc], best[rc])
-            if arr[m] == arr[m + 1]:
+            if arr[mid] == arr[mid + 1]:
                 best[node] = max(best[node], suf[lc] + pref[rc])
                 if pref[lc] == left_len:
                     pref[node] = left_len + pref[rc]
                 if suf[rc] == right_len:
                     suf[node] = right_len + suf[lc]
 
-        def build(node: int, l: int, r: int) -> None:
-            if l == r:
+        def build(node: int, lo: int, hi: int) -> None:
+            if lo == hi:
                 pref[node] = suf[node] = best[node] = 1
                 return
-            m = (l + r) // 2
-            build(2 * node, l, m)
-            build(2 * node + 1, m + 1, r)
-            pull(node, l, m, r)
+            mid = (lo + hi) // 2
+            build(2 * node, lo, mid)
+            build(2 * node + 1, mid + 1, hi)
+            pull(node, lo, mid, hi)
 
-        def update(node: int, l: int, r: int, i: int) -> None:
-            if l == r:
+        def update(node: int, lo: int, hi: int, i: int) -> None:
+            if lo == hi:
                 return
-            m = (l + r) // 2
-            if i <= m:
-                update(2 * node, l, m, i)
+            mid = (lo + hi) // 2
+            if i <= mid:
+                update(2 * node, lo, mid, i)
             else:
-                update(2 * node + 1, m + 1, r, i)
-            pull(node, l, m, r)
+                update(2 * node + 1, mid + 1, hi, i)
+            pull(node, lo, mid, hi)
 
         build(1, 0, n - 1)
         ans = []

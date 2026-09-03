@@ -17,4 +17,4 @@ class Solution:
                         else:
                             queue.appendleft((next_row, next_col))
 
-        return health - dist[m - 1][n - 1] >= 1
+        return dist[m - 1][n - 1] < health
