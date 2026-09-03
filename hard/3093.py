@@ -1,5 +1,7 @@
 class Solution:
     def stringIndices(self, wordsContainer: List[str], wordsQuery: List[str]) -> List[int]:
+        # 접미사 트라이. 각 단어를 뒤집어 넣으면서 지나는 노드마다 '가장 짧고, 같으면 먼저 나온' 단어의 인덱스를 저장한다. 쿼리도 뒤집어 내려가다 끊기는 노드의 값을 답으로 쓴다
+        # 시간 복잡도: O(총 문자 수)
         trie = [{}]
         best_index = [-1]
 

@@ -1,5 +1,7 @@
 class Solution:
     def canReach(self, arr: List[int], start: int) -> bool:
+        # 각 위치에서 ±arr[i]로 갈 수 있는 인덱스를 간선으로 보고 DFS. 값이 0인 위치에 도달하면 성공
+        # 시간 복잡도: O(n)
         n = len(arr)
         visited = {start}
         stack = [start]

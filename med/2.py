@@ -1,5 +1,7 @@
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        # 두 리스트를 앞(일의 자리)부터 자리올림과 함께 더하고, 마지막까지 올림이 남으면 노드를 하나 더 붙인다
+        # 시간 복잡도: O(max(m, n))
         n1, n2 = l1, l2
         carry = 0
 

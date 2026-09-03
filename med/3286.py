@@ -1,5 +1,7 @@
 class Solution:
     def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        # 0-1 BFS. 안전한 칸(0)은 비용 0이라 덱 앞에, 위험한 칸(1)은 비용 1이라 덱 뒤에 넣어 최소 피해 경로를 구한다
+        # 시간 복잡도: O(m·n)
         m, n = len(grid), len(grid[0])
         dist = [[m * n] * n for _ in range(m)]
         dist[0][0] = grid[0][0]

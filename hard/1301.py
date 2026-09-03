@@ -1,5 +1,7 @@
 class Solution:
     def pathsWithMaxScore(self, board: List[str]) -> List[int]:
+        # 도착점(E, 오른쪽 아래)에서 출발점(S)까지 거꾸로 DP. 각 칸에서 갈 수 있는 세 방향 중 최댓값과 그 최댓값을 만드는 경로 수를 함께 기록한다
+        # 시간 복잡도: O(n^2)
         MOD = 10**9 + 7
         n = len(board)
 

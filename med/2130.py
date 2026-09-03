@@ -1,5 +1,7 @@
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
+        # 느린/빠른 포인터로 중간 지점을 찾고, 뒤 절반을 뒤집은 뒤 앞 절반과 나란히 걸으며 쌍의 합을 비교한다
+        # 시간 복잡도: O(n)
         slow = fast = head
 
         while fast and fast.next:

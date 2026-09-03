@@ -1,5 +1,7 @@
 class Solution:
     def canPartitionGrid(self, grid: List[List[int]]) -> bool:
+        # 위쪽 행들의 합이 정확히 전체의 절반이 되는 가로 절단선이 있거나, 왼쪽 열들의 합이 절반이 되는 세로 절단선이 있으면 된다
+        # 시간 복잡도: O(m·n)
         m, n = len(grid), len(grid[0])
 
         total = sum(map(sum, grid))
@@ -24,7 +26,7 @@ class Solution:
             left += col_sum[j]
             if left == target:
                 return True
-            if left > target:
+            if left > target:  # 값이 모두 양수라 누적합은 계속 커지므로 더 볼 필요 없다
                 break
 
         return False

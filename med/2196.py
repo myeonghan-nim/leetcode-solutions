@@ -1,5 +1,7 @@
 class Solution:
     def createBinaryTree(self, descriptions: List[List[int]]) -> Optional[TreeNode]:
+        # 값 -> 노드 딕셔너리로 노드를 만들며 부모-자식을 연결하고, 자식으로 한 번도 등장하지 않은 값이 루트이다
+        # 시간 복잡도: O(n)
         nodes = {}
         children = set()
 

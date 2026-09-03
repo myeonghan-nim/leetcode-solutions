@@ -1,5 +1,7 @@
 class Solution:
     def longestRepeating(self, s: str, queryCharacters: str, queryIndices: List[int]) -> List[int]:
+        # 세그먼트 트리. 각 노드에 구간의 왼쪽 끝 연속 길이(pref), 오른쪽 끝 연속 길이(suf), 최대 연속 길이(best)를 두고, 경계 문자가 같으면 두 자식을 이어 붙인다
+        # 시간 복잡도: O((n + q) log n)
         n = len(s)
         arr = list(s)
         pref = [0] * (4 * n)
@@ -12,7 +14,7 @@ class Solution:
             pref[node] = pref[lc]
             suf[node] = suf[rc]
             best[node] = max(best[lc], best[rc])
-            if arr[mid] == arr[mid + 1]:
+            if arr[mid] == arr[mid + 1]:  # 왼쪽 자식의 끝과 오른쪽 자식의 시작이 같은 문자면 이어진다
                 best[node] = max(best[node], suf[lc] + pref[rc])
                 if pref[lc] == left_len:
                     pref[node] = left_len + pref[rc]
