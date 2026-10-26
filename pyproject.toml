@@ -15,8 +15,8 @@ license = { text = "MIT" }
 keywords = ["leetcode", "python", "algorithms"]
 
 [project.urls]
-Homepage = "https://github.com/myeonghna-nim/leetcode-solutions"
-Repository = "https://github.com/myeonghna-nim/leetcode-solutions"
+Homepage = "https://github.com/myeonghan-nim/leetcode-solutions"
+Repository = "https://github.com/myeonghan-nim/leetcode-solutions"
 
 [build-system]
 requires = ["setuptools>=61.0"]
